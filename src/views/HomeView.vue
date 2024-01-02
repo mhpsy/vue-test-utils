@@ -2,6 +2,7 @@
 import {useTodoStore} from "@/stores/useTodo";
 import {toRef} from "vue";
 import TodoList from "@/components/TodoList/index.vue";
+import TodoCheckBox from "@/components/TodoCheckBox/index.vue";
 
 const todoStore = useTodoStore();
 todoStore.initTodoList()
@@ -17,6 +18,7 @@ const addToDoItem = () => {
 </script>
 
 <template>
+    <todo-check-box></todo-check-box>
     <main class="h-screen w-screen flex justify-center py-10 px-4">
         <TodoList :list="list" @add-to-do-item="addToDoItem"/>
     </main>
